@@ -1,9 +1,23 @@
 import { Router, Request, Response } from "express";
 
 const router = Router();
+export interface Thread {
+  threadid: string;
+  thread: Email[];
+}
+export interface Email {
+  id: string;
+  name: string;
+  email: string;
+  subject: string;
+  text: string;
+  date: string;
+  read: boolean;
+  labels: string[];
+}
 
 // Sample data
-const threads = [
+const threads: Thread[] = [
   {
     threadid: "iyvutf",
     thread: [
@@ -152,6 +166,13 @@ router.get("/", async (req: Request, res: Response) => {
   setTimeout(() => {
     res.json(threads);
   }, 5000);
+});
+
+// Dummy POST API
+router.post("/upload-message", (req: Request, res: Response) => {
+  const message = req.body;
+  console.log("Received message:", message);
+  res.status(200).json({ message: "Message received and logged." });
 });
 
 export default router;

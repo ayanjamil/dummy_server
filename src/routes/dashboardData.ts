@@ -29,6 +29,7 @@ export const dataGraph: DataGraph[] = [
 ];
 
 export const statsDashboard: StatDashboard[] = [
+  { title: "Unique Leads", value: "113", icon: "Star" },
   { title: "Total Sent", value: "2350", icon: "Send" },
   { title: "Open Rate", value: "62%", icon: "MailOpen" },
   { title: "Response Rate", value: "5%", icon: "Eye" },
@@ -36,8 +37,8 @@ export const statsDashboard: StatDashboard[] = [
 ];
 
 export const recentSalesData: SalesDataItem[] = [
-  { name: "Olivia Martin", email: "olivia.martin@email.com" },
-  { name: "Jackson Lee", email: "jackson.lee@email.com" },
+  // { name: "Olivia Martin", email: "olivia.martin@email.com" },
+  // { name: "Jackson Lee", email: "jackson.lee@email.com" },
 ];
 
 const router = Router();
@@ -50,7 +51,7 @@ router.get("/", (req: Request, res: Response) => {
       statsDashboard,
       recentSalesData,
     });
-  }, 5000);
+  }, 2000);
 });
 
 export default router;
