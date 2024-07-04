@@ -16,6 +16,7 @@ router.get("/", (_, res) => {
 
 // Routes
 router.use("/threads", threadsRouter);
+
 router.use("/schedular", schedularRouter);
 router.use("/uploadcsv", uploadCSVRouter);
 router.use("/uploadlocation", uploadLocationRouter);
